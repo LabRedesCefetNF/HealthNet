@@ -3,13 +3,18 @@
 	 <meta charset="utf-8">
 </head>
 <body>
-	<h1>Cadastro</h1>
-	<p>Preencha o formulário abaixo para que as suas chaves privada e pública sejam criadas.</p>
-	<br>
-	<form action="cadastro.php" method="post">
-	Nome: <input type="text" name=nome><br>
-	Senha: <input type="password" name=senha><br><br>
-	<input type=submit value="Enviar">
-	</form>
+	<main>
+		<h1>Cadastro</h1>
+		<p>Preencha o formulário abaixo para que as suas chaves privada e pública sejam criadas.</p>
+		<br>
+		<form method="post" onsubmit="event.preventDefault(); cadastrarUsuario();">
+			Nome: <input type="text" name=nome id="nome" required><br>
+			Senha: <input type="password" name=senha id="senha" required><br><br>
+			<input type=submit value="Enviar" id="enviar">
+		</form>
+	</main>
+	<script src="/HealthNet/assets/js/jquery.js"></script>
+	<script src="/HealthNet/assets/js/FileSaver.js"></script>
+	<script src="/HealthNet/assets/js/cadastro.js"></script>
 </body>
 </html>
