@@ -3,26 +3,31 @@ $nome = $_POST["nome"];
 $senha = $_POST["senha"];
 
 //gera chave pública e privada
-$cPublica = "abcdefksjkfjsldjk5165";
 
 //salva nome e chave publica no BD
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
 try{
+    $cPublica = file_get_contents('temp-keys/public.txt');
+    
     $pdo = new PDO('mysql:host=127.0.0.1;dbname=healthnet','root','',$options);
-
+    
 	$sql = 'insert into usuario(nome, cpublica) values(?,?)';
 	$ps = $pdo->prepare($sql);
 	$ps->execute(array($nome, $cPublica));
 
     //cifra chave privada com senha
 
-    $cPrivada = 'chaveprivadacifrada';
+    //envia chave privada cifrada para download
 
-    //exibe chave para download
-
-    header('HTTP/1.1 200 Ok');
-    echo $cPrivada;
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename=temp-keys/private.txt');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize('temp-keys/private.txt'));
+    readfile('temp-keys/private.txt');
 
 }catch(Exception $e ){
     header('HTTP/1.1 400 Bad Request');

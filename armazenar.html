@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Files Upload and Download</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form method="post" enctype="multipart/form-data" >
+        <h1>Armazenamento</h1>
+        <p>Insira a sua chave privada cifrada e o arquivo que deseja armazenar.</p>
+            <input type="hidden" name="idDono" value="1">
+            Chave Privada:<br> <input type="file" name="chave" required> <br><br>
+            Arquivo:<br> <input type="file" name="arquivo" required> <br><br>
+            <button type="submit" name="save">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <script src="/HealthNet/assets/js/jquery.js"></script>
+	<script src="/HealthNet/assets/js/armazenamento.js"></script>
+  </body>
+</html>
