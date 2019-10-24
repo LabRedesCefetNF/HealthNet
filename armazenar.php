@@ -7,10 +7,6 @@ $senha = $_POST['senha'];
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 $pdo = new PDO('mysql:host=127.0.0.1;dbname=healthnet','root','',$options);
 
-//obtem chave publica do relacionado
-
-//gera chave Diffie-Hellman
-     
 // configura caminho para o arquivo ser salvo
 $fileName = $idDono."_".basename($_FILES["arquivo"]["name"]); 
 $targetFilePath = $uploadDir . $fileName; 
@@ -18,8 +14,9 @@ $targetFilePath = $uploadDir . $fileName;
 //salva arquivo no servidor
 move_uploaded_file($_FILES["arquivo"]["tmp_name"], $targetFilePath);
 
+//obtem chave publica do relacionado
+//gera chave Diffie-Hellman
 //transforma em base64
-
 //cifra utilizando chave Diffie-Hellman
 
 //salva relação
