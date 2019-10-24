@@ -10,7 +10,7 @@ var cadastrarUsuario = function(){
         data: data,
         success: function(data){
             var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
-            saveAs(blob, "privateKey.txt");
+            saveAs(blob, "privateKey.pem");
         },
         error: function(){
             console.warn('Erro ao gerar a chave');
