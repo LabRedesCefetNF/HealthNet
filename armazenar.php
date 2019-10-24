@@ -12,7 +12,7 @@ $pdo = new PDO('mysql:host=127.0.0.1;dbname=healthnet','root','',$options);
 //gera chave Diffie-Hellman
      
 // configura caminho para o arquivo ser salvo
-$fileName = basename($_FILES["arquivo"]["name"]); 
+$fileName = $idDono."_".basename($_FILES["arquivo"]["name"]); 
 $targetFilePath = $uploadDir . $fileName; 
 
 //salva arquivo no servidor

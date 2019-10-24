@@ -1,30 +1,26 @@
 <html>
-  <head>
-    <title>Files Upload and Download</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <form method="post" enctype="multipart/form-data" >
-        <h1>Armazenamento</h1>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <h1>Armazenamento de arquivo</h1>
         <p>Insira a sua chave privada cifrada e o arquivo que deseja armazenar.</p>
-            <input type="hidden" name="idDono" value="1" id="idDono">
-            
-            Usuario Relacionado: <br/>
-            <select name="idRelacionado" id="idRelacionado"></select><br><br>
+        <input type="hidden" name="idDono" value="1" id="idDono">
 
-            Senha:<br> <input type="password" name="senha" required> <br><br>
+        Usuario Relacionado: <br />
+        <select name="idRelacionado" id="idRelacionado"></select><br><br>
 
-            Chave Privada:<br> <input type="file" name="chave" required> <br><br>
+        Senha:<br> <input type="password" name="senha" required> <br><br>
 
-            Arquivo:<br> <input type="file" name="arquivo" required> <br><br>
+        Chave Privada:<br> <input type="file" name="chave" required> <br><br>
 
-            <button type="submit" name="save">Enviar</button>
-        </form>
-      </div>
-    </div>
+        Arquivo:<br> <input type="file" name="arquivo" required> <br><br>
+
+        <button type="submit" name="save">Enviar</button>
+    </form>
     <script src="/HealthNet/assets/js/jquery.js"></script>
     <script src="/HealthNet/assets/js/listarUsuarios.js"></script>
     <script src="/HealthNet/assets/js/armazenamento.js"></script>
-  </body>
+</body>
 </html>
