@@ -6,7 +6,7 @@
     <form method="post" enctype="multipart/form-data">
         <h1>Recuperação de arquivo</h1>
         <p>Selecione o arquivo e inform sua chave privada cifrada para recuperar o arquivo.</p>
-        <input type="hidden" name="idDono" value="1" id="idDono">
+        <input type="hidden" name="idUsuarioAtual" value="1" id="idUsuarioAtual">
 
         <table style="border: 1px solid;">
             <tr>
@@ -23,6 +23,7 @@
         <button type="submit" name="save">Baixar</button>
     </form>
     <script src="/HealthNet/assets/js/jquery.js"></script>
+    <script src="/HealthNet/assets/js/FileSaver.js"></script>
     <script src="/HealthNet/assets/js/listarArquivos.js"></script>
     <script src="/HealthNet/assets/js/recuperar.js"></script>
 </body>
