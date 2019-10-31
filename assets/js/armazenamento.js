@@ -1,5 +1,3 @@
-//https://www.codexworld.com/ajax-file-upload-with-form-data-jquery-php-mysql/
-
 $(document).ready(function (e) {
     $("form").on('submit',(function(e) {
         e.preventDefault();

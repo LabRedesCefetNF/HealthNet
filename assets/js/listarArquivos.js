@@ -8,7 +8,7 @@ var inserirLinhas = function(data){
         $('<td/>', {text:arquivos[i].dado}).appendTo(linha);
         $('<td/>', {text:arquivos[i].nome}).appendTo(linha);
         
-        var radio = $('<input/>', {type:'radio', name: 'idArquivo'});
+        var radio = $('<input/>', {type:'radio', name: 'idArquivo', value: arquivos[i].id});
         
         if(i == 0){
             $(radio).attr('checked', 'checked');
