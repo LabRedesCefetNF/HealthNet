@@ -33,7 +33,7 @@ while($obj = $ps->fetchObject()){
 $cPublica = $chavesPublicas[0]->cPublica;
 
 file_put_contents ('temp-keys/publicKey.pem', $cPublica);
-move_uploaded_file($_FILES["chave"]["tmp_name"], 'temp-keys/privateKeyEncrypted.pem');
+move_uploaded_file($_FILES["chave"]["tmp_name"], 'temp-keys/privateKeyEncrypted.pem.64');
 
 system('cd ./shell/ && ./encrypt.sh '.$senha.' '.$fileName);
 

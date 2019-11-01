@@ -23,12 +23,12 @@ try{
 
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename=temp-keys/privateKeyEncrypted.pem');
+    header('Content-Disposition: attachment; filename=temp-keys/privateKeyEncrypted.pem.64');
     header('Expires: 0');
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
-    header('Content-Length: ' . filesize('temp-keys/privateKeyEncrypted.pem'));
-    readfile('temp-keys/privateKeyEncrypted.pem');
+    header('Content-Length: ' . filesize('temp-keys/privateKeyEncrypted.pem.64'));
+    readfile('temp-keys/privateKeyEncrypted.pem.64');
 
 }catch(Exception $e ){
     header('HTTP/1.1 400 Bad Request');
