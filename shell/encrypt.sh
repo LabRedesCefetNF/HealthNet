@@ -5,6 +5,6 @@ openssl aes-256-ecb -d -pass pass:$1 -nosalt -in ../temp-keys/privateKeyEncrypte
 
 openssl pkeyutl -derive -inkey ../temp-keys/privateKey.pem -peerkey ../temp-keys/publicKey.pem -out ../temp-keys/chaveDH.bin
 
-openssl base64 -d -in ../uploads/$2 -out ../uploads/encoded.txt
+openssl base64 -in ../uploads/$2 -out ../uploads/encoded.txt
 
 openssl aes-256-cbc -e -kfile ../temp-keys/chaveDH.bin -in ../uploads/encoded.txt -out ../saved-files/$2
