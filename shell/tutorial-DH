@@ -1,0 +1,45 @@
+Tutorial Diffie-Hellman
+
+01 - Gerar Chave parametros globais DH
+comando: openssl genpkey -genparam -algorithm DH -out chaveglobal.pem
+
+02 - Bob Gera seu par de chave
+#Par de chave
+openssl genpkey -paramfile chaveglobal.pem -out bobKey.pem
+#Chave Públic Bob
+openssl pkey -in bobKey.pem -pubout -out bobPublicKey.pem
+
+03 - Eva Gera seu par de chave
+#Par de chave
+openssl genpkey -paramfile chaveglobal.pem -out evaKey.pem
+#Chave Pública Eva
+openssl pkey -in bobKey.pem -pubout -out bobPublicKey.pem
+
+04 - Bob e Eva trocam suas chaves públicas.
+
+05 - Bob obtem a chave secreta (256 bits)
+openssl pkeyutl -derive -inkey bobKey.pem -peerkey evaPublickey.pem -out chave1.bin
+
+06 - Eva obtem a chave secreta (256 bits)
+openssl pkeyutl -derive -inkey evaKey.pem -peerkey bobPublicKey.pem -out chave2.bin
+
+3e25c2ab642270b7b839e4c83245b09d bobKey.pem
+c24234e096075ee921ed0b7421b99e95 bobPublicKey.pem
+5d729a2d4edcd7511e7f1677f00af205 chaveglobal.pem
+8b55b4a216835c616fd1bb71c52af2a1 evaKey.pem
+17e7376d30fbe7eeb57e4c4a13a75baa evaPublickey.pem
+
+cdb5c1969034c0ddc8485765ede60f4d chave1.bin
+cdb5c1969034c0ddc8485765ede60f4d chave2.bin
+
+###########################################################
+
+Bob cifra arquivo para enviar para EVA
+openssl aes-256-cbc -e -kfile chave1.bin -in arquivosecreto.txt -out arquivosecreto.txt.seguro
+
+Eva decifra o arquivo recebido
+openssl aes-256-cbc -d -kfile chave2.bin -in arquivosecreto.txt.seguro -out arquivosecreto.txt.decifrado
+
+5fc6aa71728da011d6c97e3faa1290f3 arquivosecreto.txt
+5fc6aa71728da011d6c97e3faa1290f3 arquivosecreto.txt.decifrado
+7108f1bb1850cd98f4aa365588421a06 arquivosecreto.txt.seguro
