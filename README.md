@@ -1,5 +1,5 @@
-# HealthNet
-Sistema para armazenamento de Histórico Médico
+# Sigilo médico-paciente sobre criptografia ponta-a-ponta 
+Trabalho apresentado no 5º Workshop Regional de Segurança da Informação e de Sistemas Computacionais (WRSeg) durante a XVIII Escola Regional de Redes de Computadores (ERRC 2020).
 # Abstract
 Faced with the new scenario imposed by the COVID-19 pandemic, the physician-patient relationship has undergone significant changes. In some cases it is possible for the patient to be treated remotely, however, the delivery and analysis of exams are sensitive points for medical confidentiality / patient. There are some storage systems for medical history in the cloud, however closed solutions, do not provide for migration of patient data and do not guarantee that the data is safe for leaks.
 This work presents a model and a implementation that offering to patient the control over their medical information in compliance to the brazilian version of the GDPR.
