@@ -13,7 +13,7 @@ openssl pkey -in bobKey.pem -pubout -out bobPublicKey.pem
 #Par de chave
 openssl genpkey -paramfile chaveglobal.pem -out evaKey.pem
 #Chave Pública Eva
-openssl pkey -in bobKey.pem -pubout -out bobPublicKey.pem
+openssl pkey -in evaKey.pem -pubout -out evaPublicKey.pem
 
 04 - Bob e Eva trocam suas chaves públicas.
 
